@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mariadb:
+    container_name: mariadb
+    restart: always
+    network_mode: host
+    image: docker.io/bitnami/mariadb:10.6
+    environment:
+      # ALLOW_EMPTY_PASSWORD is recommended only for development.
+      # - ALLOW_EMPTY_PASSWORD=yes
+      - MARIADB_ROOT_PASSWORD=hello
+    volumes:
+      - ./data:/bitnami/mariadb
+      - ./my.cnf:/opt/bitnami/mariadb/conf/my.cnf
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "2M"
+        max-file: "3"

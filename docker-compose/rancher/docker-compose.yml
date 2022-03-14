@@ -1,0 +1,17 @@
+version: '3'
+services:
+  rancher:
+    image: rancher/rancher:v2.5.6-rc6
+    container_name: rancher
+    privileged: true
+    network_mode: host
+    restart: always
+    volumes:
+      - ./domain.com/cert.pem:/etc/rancher/ssl/cert.pem
+      - ./domain.comchain.pem:/etc/rancher/ssl/cacerts.pem
+      - ./domain.com/privkey.pem:/etc/rancher/ssl/key.pem
+      - ./rancher-data:/var/lib/rancher
+      - ./auditlog:/var/log/auditlog
+    environment:
+      - AUDIT_LEVEL=1
+      

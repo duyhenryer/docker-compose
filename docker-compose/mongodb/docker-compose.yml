@@ -1,0 +1,20 @@
+version: '3'
+services:
+  mongodb:
+    image: bitnami/mongodb:4.2
+    restart: always
+    network_mode: host
+    # ports:
+    #   - "27020:27017"
+    volumes:
+      - ./mongo-data:/bitnami/mongodb
+    environment:
+      - MONGODB_ROOT_PASSWORD=hello
+    logging:
+      driver: json-file
+      options:
+          max-size: "10m"
+          max-file: "5"
+# networks:
+#   dockernet:
+#     external: true
