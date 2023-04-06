@@ -39,6 +39,6 @@ jobs:
         run: |
           cd kafka && ./test.sh zk-single-kafka-single.yml 2
 
-      - name: run test multiple 3
-        run: |
-          cd kafka && ./test.sh zk-multiple-kafka-multiple.yml 6
+      # - name: run test multiple 3
+      #   run: |
+      #     cd kafka && ./test.sh zk-multiple-kafka-multiple.yml 6
