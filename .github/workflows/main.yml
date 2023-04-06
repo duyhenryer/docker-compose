@@ -33,7 +33,6 @@ jobs:
       - name: install kafka binary
         run: sudo apt-get install confluent-platform-oss-2.11
       
-
       # Runs a set of commands using the runners shell
       - uses: docker-practice/actions-setup-docker@master
       - name: run test single 2
@@ -42,4 +41,4 @@ jobs:
 
       - name: run test multiple 3
         run: |
-          cd kafka && ./test.sh zk-multiple-kafka-multiple.yml 3
+          cd kafka && ./test.sh zk-multiple-kafka-multiple.yml 6
