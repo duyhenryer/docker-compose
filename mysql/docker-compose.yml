@@ -1,4 +1,3 @@
-version: '3'
 services:
   mysql:
     image: bitnami/mysql:5.7
@@ -10,15 +9,15 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=
     volumes:
-      - ./data:/bitnami/mariadb
-      - ./my.cnf:/opt/bitnami/mariadb/conf/my.cnf
+      - ./mysql-data:/bitnami/mysql/data
+      - ./my.cnf:/opt/bitnami/mysql/conf/my.cnf
     logging:
       driver: "json-file"
       options:
         max-size: "2M"
         max-file: "3"
-#     networks:
-#       - dockernet
-# networks:
-#   dockernet:
-#     external: true
+    networks:
+      - dockernet
+networks:
+  dockernet:
+    external: true

@@ -7,7 +7,6 @@ services:
     volumes:
       - grafana-data:/var/lib/grafana
     restart: unless-stopped
-
 volumes:
   grafana-data:
     driver: local
