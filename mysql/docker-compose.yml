@@ -7,10 +7,7 @@ services:
        - ./mysql-data:/bitnami/mysql/data
        - ./my.cnf:/opt/bitnami/mysql/conf/my.cnf
     environment:
-      - MYSQL_ROOT_PASSWORD=
-    volumes:
-      - ./mysql-data:/bitnami/mysql/data
-      - ./my.cnf:/opt/bitnami/mysql/conf/my.cnf
+      - MYSQL_ROOT_PASSWORD=hello
     logging:
       driver: "json-file"
       options:
